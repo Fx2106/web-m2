@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Explora Pokémon con datos de PokeAPI."
+    />
+
+    <title>Pokédex — Async Odyssey</title>
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">U2 · JAVASCRIPT AVANZADO</p>
+
+        <div class="hero__heading">
+          <div>
+            <h1>Poké<span>dex</span></h1>
+            <p class="hero__description">
+              Explora Pokémon, filtra por tipo y descubre sus estadísticas.
+            </p>
+          </div>
+
+          <span class="hero__badge">ASYNC ODYSSEY</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="control-panel" aria-label="Búsqueda y filtros">
+          <form id="search-form" class="search-form">
+            <label class="sr-only" for="search-input">
+              Buscar Pokémon por nombre o número
+            </label>
+
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Busca por nombre o número..."
+              autocomplete="off"
+            />
+
+            <button class="button button--primary" type="submit">
+              Buscar
+            </button>
+          </form>
+
+          <div class="filter-row">
+            <label class="filter-label" for="type-filter">
+              Tipo
+            </label>
+
+            <select id="type-filter">
+              <option value="all">Todos los tipos</option>
+            </select>
+
+            <p class="filter-hint">
+              Los filtros se aplican a los Pokémon cargados.
+            </p>
+          </div>
+        </section>
+
+        <section class="overview" aria-label="Resumen de resultados">
+          <p id="results-summary">
+            Todavía no hay Pokémon cargados.
+          </p>
+
+          <p id="attack-average" class="overview__average">
+            Ataque medio: —
+          </p>
+        </section>
+
+        <p
+          id="status-message"
+          class="status-message"
+          role="status"
+          aria-live="polite"
+        >
+          Listo para consultar PokeAPI.
+        </p>
+
+        <section
+          id="pokemon-grid"
+          class="pokemon-grid"
+          aria-label="Lista de Pokémon"
+          aria-busy="false"
+        ></section>
+
+        <div class="actions">
+          <button
+            id="load-more"
+            class="button button--secondary"
+            type="button"
+            hidden
+          >
+            Cargar más Pokémon
+          </button>
+
+          <button
+            id="retry-button"
+            class="button button--secondary"
+            type="button"
+            hidden
+          >
+            Reintentar
+          </button>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Datos de
+          <a
+            href="https://pokeapi.co/"
+            target="_blank"
+            rel="noreferrer"
+          >PokeAPI</a>
+          · Hecho con JavaScript, módulos ES y Vite.
+        </p>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
